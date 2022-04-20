@@ -1,0 +1,21 @@
+# use time module and tkinter
+from tkinter import *
+from tkinter.ttk import *
+from time import strftime
+root = Tk()
+root.title("Digital clock")
+
+
+# condition
+def time():
+    string = strftime("*%H:%M:%S %p*\n*%a-%b-%y*")
+    label.config(text=string)
+    label.after(1000, time)
+
+
+# color and font
+label = Label(root, font=("arial", 70), background="black", foreground="cyan")
+label.pack(anchor="center")
+time()
+
+mainloop()
