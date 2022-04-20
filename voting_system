@@ -1,0 +1,50 @@
+# Digital Voting system
+# This election is held in 2 members,1st you can add there name.
+# 2nd enter your voter_id and voted your person
+
+cand1 = input("Enter 1st candidate name : ").capitalize()
+cand2 = input("Enter 2nd candidate name : ").capitalize()
+cand1_vote = 0
+cand2_vote = 0
+voters_id = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+no_voter = len(voters_id)
+voted = []
+print(f"Total voter is : {no_voter}")
+
+while True:
+    if not voters_id:
+        print("\n\tThe vote is over")
+        if cand1_vote > cand2_vote:
+            print(f"Congratulation! {cand1} is win the election with : {cand1_vote} vote")
+            print(f" {cand2} is get : {cand2_vote} vote")
+        elif cand1_vote < cand2_vote:
+            print(f"Congratulation! {cand2} is win the election with : {cand2_vote} vote")
+            print(f" {cand1} is get : {cand1_vote} vote")
+        elif cand1_vote == cand2_vote:
+            print("Tie.Both are same")
+            print("Try again")
+        break
+    else:
+        voter = int(input("Enter your voter id : "))
+        if voter in voted:
+            print("You already voted")
+        elif voter in voters_id:
+            print(f"1 for : {cand1}\n2 for : {cand2}")
+            c = int(input("Enter your choice 1 or 2 : "))
+            if c == 1:
+                cand1_vote += 1
+                print(f"You voted :{cand1}")
+            elif c == 2:
+                cand2_vote += 1
+                print(f"You voted :{cand2}")
+            else:
+                print("Wrong input. enter 1 or 2")
+                continue
+            voters_id.remove(voter)
+            voted.append(voter)
+        else:
+            print("You are not allowed to vote")
+
+print("\n\nThis code is made by Habibur Rahman..thanks ")
+print("\t\t\t**************")
+
