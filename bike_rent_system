@@ -1,0 +1,47 @@
+# use constructor method, function, and while condition
+class Bike:
+    def __init__(self, stock):
+        self.stock = stock
+
+    def display_bike(self):
+        print(f"Total Bike is : {self.stock}")
+
+    def rent_bike(self, b):
+        if self.stock < b == 0:
+            print("Please enter a value greater then 0 and lower then stoke")
+        elif self.stock > b:
+            self.stock = self.stock - b
+            print(f"you want {b} bike and Total cost is : {b * 100}")
+            print(f"Available Bike is : {self.stock}")
+        else:
+            print("enter valid value")
+
+    def cancle(self, can):
+        self.stock = self.stock + can
+        print(f"you want to cancel : {can}")
+        print(f"Available Bike is : {self.stock}")
+
+
+# condition
+while True:
+    name = input("Enter your name : ")
+    bikes = Bike(100)
+    bi = int(input(""" take a value
+    1. for Show_Bike
+    2 .for rent bike
+    3. for cancel bike
+    4 . for exit
+    Enter your choice : """))
+    if bi == 1:
+        bikes.display_bike()
+    elif bi == 2:
+        n = int(input("I want to : "))
+        bikes.rent_bike(n)
+        print(f"Hello {name}, your request is conform. please take your order")
+    elif bi == 3:
+        can = int(input("I want to cancel : "))
+        bikes.cancle(can)
+        print(f"Hello {name}, your request is conform. please take your money back "
+              f"\nYou back money rs : {can * 100}")
+    else:
+        break
