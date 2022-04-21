@@ -1,0 +1,30 @@
+# simple calculator
+print("""1. for addition
+2. for subtract
+3. for multiply
+4. for division""")
+
+rela = int(input("\n\tEnter = "))
+
+if rela == 1:
+    fst = int(input("enter 1st num : "))
+    snd = int(input("enter 2nd num : "))
+    addition = fst + snd
+    print("\tThe result is : ", addition)
+elif rela == 2:
+    fst = int(input("enter 1st num : "))
+    snd = int(input("enter 2nd num : "))
+    subtract = fst - snd
+    print("\tThe result is : ", subtract)
+elif rela == 3:
+    fst = int(input("enter 1st num : "))
+    snd = int(input("enter 2nd num : "))
+    multiply = fst * snd
+    print("\tThe result is : ", multiply)
+elif rela == 4:
+    fst = int(input("enter 1st num : "))
+    snd = int(input("enter 2nd num : "))
+    division = fst // snd
+    print("\tThe result is : ", division)
+else:
+    print("wrong input")
